@@ -174,9 +174,13 @@ int main(int argc, char **argv)
 		leadertoworld2D( follower2_goal, leader);
 
 		//Input your goal_point to your controller
-		Positioncontrol(leader_goal, leader, leader_twist);
-    	Positioncontrol(follower1_goal, follower1, follower1_twist);
-    	Positioncontrol(follower2_goal, follower2, follower2_twist);
+		/* -------------------
+		Finish you code here
+
+
+		
+
+		--------------------*/ 
 
 		//Input your control input(from Pcontrol) to your plant
     	follower1_pub.publish(follower1_twist);

@@ -4,13 +4,14 @@
 
 ---
 ## 題目
-請實踐出一個使turtlesim走到你指定位置的功能
+請實踐一個讓 leader turtle 可以走到指定位置的程式，並且後面兩隻follower烏龜可以維持固定隊形一起移動
+
 
 ### 指令
 ```
 	roscore
-	roslaunch hw1 turtle_setting.launch
+	roslaunch hw2 turtle.launch
 	rosrun hw2 hw2 
 ```
-![image](https://github.com/2020-Robotics-Aerial-Robots/Homework/blob/main/hw2/photo/G3MrdXR.png)
+![](https://i.imgur.com/0QK4ZJD.png)
 ---
