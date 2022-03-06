@@ -48,22 +48,14 @@ void KeyboardControl()
 	std::cout<< "c variable"<< c <<std::endl;
 	switch (c)
     {
-      case 119:    // key w
-        vel_msg.linear.x += 0.5;
-        break;
-      case 115:    // key s
-        vel_msg.linear.x += -0.5;
-        break;
-      case 100:    // key d
-        vel_msg.angular.z += -0.1;
-        break;
-      case 97:    // key a
-        vel_msg.angular.z += 0.1;
-        break;
-      case 114:    // key r
-        vel_msg.linear.x = 0;
-        vel_msg.angular.z = 0;
-        break;
+      /* implement your code here
+      
+      
+      
+      
+      
+      
+      */
     }
   }
 }
