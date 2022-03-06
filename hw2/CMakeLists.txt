@@ -208,3 +208,5 @@ include_directories(
 add_executable(hw2 src/hw2.cpp)
 target_link_libraries(hw2 ${catkin_LIBRARIES})
 
+add_executable(turtle_more src/turtle_more.cpp)
+target_link_libraries(turtle_more ${catkin_LIBRARIES})

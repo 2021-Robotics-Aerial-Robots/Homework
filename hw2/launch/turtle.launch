@@ -1,0 +1,6 @@
+<launch>
+	<group ns="turtlesim">
+	       <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+	</group>
+	<node pkg="hw2" name="turtle_more" type="turtle_more" />
+</launch>
