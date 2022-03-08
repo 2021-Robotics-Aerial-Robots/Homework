@@ -1,9 +1,8 @@
 ![image](https://github.com/2020-Robotics-Aerial-Robots/Homework/blob/main/hw3/Figures/LOGO%20%E4%B8%AD%E8%8B%B1%E6%96%87%E6%A9%AB.png)
-# 108 年度 機器人學：多軸旋翼機 
+# 110 年度 機器人學：多軸旋翼機 
 
 ### HW3
 Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. \
-Deadline: 4/6!!!
 ---
 
 ## 題目
