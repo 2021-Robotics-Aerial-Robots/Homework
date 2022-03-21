@@ -54,13 +54,13 @@ def quad_sim():
     yaw = 0
     
     eul_angle = np.array([[0],[0],[0]]); 
-    angular_vel = np.array([[0],[0] ,[0]]);
+    angular_vel = np.array([[0],[0] ,[0]])
 
     # desire angular velocity, we want the quadcopter to avoid rotating
-    des_yaw_rate = 0;
-    des_roll_rate = 0;
-    des_pitch_rate = 0;
-    
+    des_yaw_rate = 0
+    des_roll_rate = 0
+    des_pitch_rate = 0
+
     # time initialize
     dt = 0.1
     t = 0
@@ -79,7 +79,7 @@ def quad_sim():
     
     # desire identity orientation
     ''' Homework3
-    des_R -> identity matrix
+    des_R = I_3
     
     des_R = .....
     
@@ -87,7 +87,8 @@ def quad_sim():
     while True:
         
         while t <= T:
-
+            
+        
             des_z_pos = np.array([2])
             des_z_vel = np.array([0])
             des_z_acc = np.array([0])
@@ -101,7 +102,6 @@ def quad_sim():
             # get the rotation axis , you can see this as eigen vector (with eigen value = 1)
             
             axis = .....
-            axis = vee_map(axis)
 
             # get the rotation angle of the rotation axis
             angle_of_axis = .....
@@ -123,23 +123,23 @@ def quad_sim():
             # ------ For P control ------
             
             # position error 
-            ex_z = des_z_pos - z_pos;
+            ex_z = des_z_pos - z_pos
 
             # angle error
-            er_roll = rotation_error[0];
-            er_pitch = rotation_error[1];
-            er_yaw = rotation_error[2];
+            er_roll = rotation_error[0]
+            er_pitch = rotation_error[1]
+            er_yaw = rotation_error[2]
     
     
             # ------ For D control ------
             
             # velocity error
-            ev_z = des_z_vel - z_vel;
+            ev_z = des_z_vel - z_vel
 
             # angular velocity error
-            ew_roll = ew[0];
-            ew_pitch = ew[1];
-            ew_yaw = ew[2];
+            ew_roll = ew[0]
+            ew_pitch = ew[1]
+            ew_yaw = ew[2]
             
             '''
             ---------------Controller design------------------
@@ -175,12 +175,12 @@ def quad_sim():
             # add noise (ex: wind, external force....)
             angular_acc = add_noise(angular_acc,0.01)
 
-            angular_vel = angular_vel + angular_acc*dt;
+            angular_vel = angular_vel + angular_acc*dt
             eul_angle = eul_angle + angular_vel*dt
 
-            roll = eul_angle[0];     
-            pitch = eul_angle[1];
-            yaw = eul_angle[2];
+            roll = eul_angle[0]   
+            pitch = eul_angle[1]
+            yaw = eul_angle[2]
             
             # get the rotation matrix from roll, pitch, yaw angle
             q.R = rotation_matrix(roll, pitch, yaw)
