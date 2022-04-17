@@ -1,0 +1,42 @@
+<launch>
+  <arg name="mav_name" default="firefly"/>
+  <arg name="world_name" default="basic"/>
+  <arg name="enable_logging" default="false" />
+  <arg name="enable_ground_truth" default="true" />
+  <arg name="log_file" default="$(arg mav_name)" />
+  <arg name="laser_enabled" default="true"/>
+  <arg name="kinect_enabled" default="false"/>
+
+
+
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find rotors_gazebo)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find rotors_gazebo)/models"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rotors_gazebo)/worlds/$(arg world_name).world" />
+    <!-- <arg name="debug" value="true"/> -->
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="true"/>
+    <!-- <arg name="verbose" value="true"/> -->
+  </include>
+
+  <group ns="$(arg mav_name)">
+
+    <include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
+      <arg name="mav_name" value="$(arg mav_name)" />
+      <arg name="model" value="$(find rotors_description)/urdf/mav_with_vi_sensor.gazebo" />
+      <arg name="enable_logging" value="$(arg enable_logging)" />
+      <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
+      <arg name="log_file" value="$(arg log_file)"/>
+      <arg name="y" value="10.0"/>
+      <arg name="x" value="15.2"/>
+    </include>
+
+     <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+      <arg name="y" value="19.0"/>
+      <arg name="x" value="15.2"/>
+
+    </include>
+
+  </group>
+
+</launch>

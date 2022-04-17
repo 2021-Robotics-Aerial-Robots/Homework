@@ -1,8 +1,0 @@
-imu ttyACM0 connect
-
-imu2 ACM1 object
-
-rigidbody1  connect
-
-
-
