@@ -41,6 +41,10 @@ sudo ./install_geographiclib_datasets.sh
 ```
 sudo apt-get install ros-melodic-husky-simulator
 ```
+## Apriltag
+```
+sudo apt-get install ros-melodic-apriltag-ros
+```
 
 # Running
 
