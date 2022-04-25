@@ -53,6 +53,8 @@ cd ..
 mv apriltag/ ~/
 ```
 
+
+
 # Running
 
 ## Setup
@@ -70,6 +72,9 @@ cd ~/catkin_ws
 
 # it will take about 2-5 minutes for first time
 catkin_make
+
+# Remember if you cannot find launch file or node file, execute this command! 
+source ~/catkin_ws/devel/setup.bash
 ```
 ## Spawn husky and quadcopter
 
