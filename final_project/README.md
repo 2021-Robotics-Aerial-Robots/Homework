@@ -44,10 +44,33 @@ sudo apt-get install ros-melodic-husky-simulator
 ## Apriltag
 ```
 sudo apt-get install ros-melodic-apriltag-ros
+cd apriltag
+cmake .
+sudo make install
+cd ..
+
+# move apriltag installation folder to another folder to avoid error
+mv apriltag/ ~/
 ```
 
 # Running
 
+## Setup
+```
+# if you don't have one, try to review ros architecture  and create one
+cd ~/catkin_ws/src
+
+git clone git@github.com:2021-Robotics-Aerial-Robots/Homework.git
+mv /Homework/final_project final_project
+
+# delete Homework file, you will need to enter the password
+sudo rm -r /Homework
+
+cd ~/catkin_ws
+
+# it will take about 2-5 minutes for first time
+catkin_make
+```
 ## Spawn husky and quadcopter
 
 ```
@@ -65,12 +88,7 @@ roslaunch rotors_gazebo control_challenge.launch
 
 
 # Challenge 1
-## Requirements
-```
-cd apriltag
-cmake .
-sudo make install
-```
+
 ## Apriltag tutorial
 https://blog.csdn.net/wangmj_hdu/article/details/112668252
 ## Run Apriltag_detector
